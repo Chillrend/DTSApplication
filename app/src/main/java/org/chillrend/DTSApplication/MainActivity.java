@@ -1,5 +1,6 @@
 package org.chillrend.DTSApplication;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.Button;
@@ -15,12 +16,17 @@ public class MainActivity extends AppCompatActivity {
 
         final Button btn_ok = findViewById(R.id.button_to_red);
         final Button red_btn = findViewById(R.id.button);
+        final Button btn_lat_menu = findViewById(R.id.button_to_menu);
 
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 red_btn.setBackgroundColor(Color.RED);
             }
+        });
+
+        btn_lat_menu.setOnClickListener(view -> {
+            startActivity(new Intent(this, MenuActivity.class));
         });
     }
 }
